@@ -8,6 +8,7 @@
  * On error, -1 is returned, and errno is set appropriately.
  * Description: _putchar uses a local buffer to call write
  */
+
 int _putchar(char c)
 {
 	static char buf[1024];
@@ -31,11 +32,13 @@ int _putchar(char c)
  * @str: pointer to the string to print
  * Return: number of chars written
  */
+
 int _puts(char *str)
 {
 	register int i;
 
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
+
 	return (i);
 }
