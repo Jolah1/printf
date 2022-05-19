@@ -11,7 +11,7 @@
  * @hash: flag for the '#' character
  */
 
-stypedef struct flags
+typedef struct flags
 {
 	int plus;
 	int space;
