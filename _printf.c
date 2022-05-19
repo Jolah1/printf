@@ -1,11 +1,13 @@
+
 #include "main.h"
 
 /**
  * _printf - produces output according to a format
- * @format: format string containing the characters
+ * @format: format string containing the charaters
  * Description: this function is to call the get_print() function
  * Return: length of the formatted output string
  */
+
 int _printf(const char *format, ...)
 {
 	int (*pfunc)(va_list, flags_t *);
@@ -36,7 +38,7 @@ int _printf(const char *format, ...)
 			count += (pfunc)
 				? pfunc(arguments, &flags)
 				: _printf("%%%c", *p);
-		} else
+		}else
 			count += _putchar(*p);
 	}
 	_putchar(-1);
