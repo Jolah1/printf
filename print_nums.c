@@ -19,6 +19,7 @@ int print_int(va_list l, flags_t *f)
 	if (n <= 0)
 		res++;
 	print_number(n);
+
 	return (res);
 }
 
@@ -35,6 +36,7 @@ int print_unsigned(va_list l, flags_t *f)
 	char *str = convert(u, 10, 0);
 
 	(void)f;
+
 	return (_puts(str));
 }
 
