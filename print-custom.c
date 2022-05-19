@@ -62,6 +62,39 @@ int print_rev(va_list l, flags_t *f)
 }
 
 /**
+ * print_rot13 - prints a string using rot13
+ * @l: list of arguments
+ * @f: pointer to the struct
+ * Return: length ot the printed string
+ */
+
+int print_rot13(va_list l, flags_t *f)
+{
+	int i, j;
+	char rot13[] = "abcdefghijklmonpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char ROT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char *s = va_arg(l, char *);
+
+	(void)f;
+	for (j = 0; s[j]; j++)
+	{
+		if (s[j] < 'A' || (s[j] > 'Z' && s[j] < 'a') || s[j] > 'z')
+			_putchar(s[j]);
+		else
+		{
+			for (i = 0; i <= 52; i++)
+			{
+				if (s[j] == rot13[i])
+					_putchar(ROT13[i]);
+			}
+		}
+	}
+
+	return (j);
+
+}
+
+/**
  * print_percent - prints a percent
  * @l: va_list arguments from _printf
  * @f: pointer to the struct flags in which we turn the flags on
