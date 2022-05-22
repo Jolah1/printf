@@ -3,8 +3,9 @@
 /**
  * print_hex - prints a number in hexadecimal base in lowercase
  * @l: va_list arguments from _printf
- * @f pointer to the struct flags that determines if flag is passed to _printf
- * Description: the function calls convert() which turns the input number into the correct base and returns it as a string
+ * @f: pointer to the struct flags that determines if flag is passed to _printf
+ * Description: the function calls convert() which turns the
+ * input number into the correct base and returns it as a string
  * Return: the number of char printed
  */
 
@@ -59,7 +60,7 @@ int print_binary(va_list l, flags_t *f)
 }
 
 /**
- * print _octal - prints a number in base 8
+ * print_octal - prints a number in base 8
  * @l: va_list arguments
  * @f: pointer
  * Description: the function
