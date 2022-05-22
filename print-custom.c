@@ -73,28 +73,27 @@ int print_rev(va_list l, flags_t *f)
 int print_rot13(va_list l, flags_t *f)
 {
 	int i, j;
-	int counter = 0;
-	char rot13[] = "NOPQRSTUVWXYZABCDEFGHIJKLM	nopqrstuvwxyzabcdefghijklm";
+	char rot13[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char ROT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	char *s = va_arg(l, char *);
 
 	(void)f;
 
-	i = 0;
-	j = 0;
-
-	while (s[i])
+	for (j = 0; s[j]; j++)
 	{
-		if ((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z'))
-		{
-			j = s[i] - 65;
-			counter += _putchar(rot[j]);
-		}
+		if ( s[j] < 'A' || (s[j] > 'Z' && s[j] < 'a') || s[j] > 'z')
+			_putchar(s[j]);
 		else
-			counter += _putchar(s[i]);
-		i++;
+		{
+			for (i = 0; i <= 52; i++)
+			{
+				if (s[j] == rot13[i])
+					_putchar(ROT13[i]);
+			}
+		}
 	}
 
-	return (counter);
+	return (j);
 
 }
 
